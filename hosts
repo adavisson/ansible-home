@@ -2,4 +2,4 @@
 ec2-54-241-62-116.us-west-1.compute.amazonaws.com
 
 [plex]
-10.0.0.87
+plex ansible_host=10.0.0.87 ansible_user=adavisson
