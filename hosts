@@ -1,5 +1,5 @@
 [webservers]
-ec2-54-241-62-116.us-west-1.compute.amazonaws.com
+webserver ansible_host=ec2-54-241-62-116.us-west-1.compute.amazonaws.com ansible_user=ubuntu ansible_ssh_private_key_file=/Users/adavisson/Documents/AWS\ Keys/NC-webserver.pem
 
 [plex]
-plex ansible_host=10.0.0.87 ansible_user=adavisson
+plex-home ansible_host=10.0.0.87 ansible_user=adavisson
