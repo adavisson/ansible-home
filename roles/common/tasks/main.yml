@@ -1,11 +1,9 @@
 - name: update server
-  apt: update_cache=yes
+  apt: 
+    update_cache: yes
   become: yes
 
 - name: upgrade server
-  apt: upgrade=dist
-  become: yes
-
-- name: reboot server
-  reboot:
+  apt: 
+    upgrade: dist
   become: yes

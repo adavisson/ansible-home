@@ -1,3 +1,4 @@
 - hosts: plex
   roles:
     - common
+    - plex_server

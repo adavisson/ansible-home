@@ -1,0 +1,28 @@
+- name: Copy latest plex package to tmp
+  copy:
+    src: /Users/adavisson/Downloads/plex/
+    dest: /tmp/
+  become: true
+
+- name: get file path
+  find:
+    paths: /tmp/
+    patterns: "*.deb"
+  register: plex_package
+
+- name: Install plex package
+  apt:
+    deb: "{{ item.path }}"
+  with_items: "{{ plex_package.files }}"
+  become: true
+
+- name: Remove package from server
+  file:
+    path: "{{ item.path }}"
+    state: absent
+  with_items: "{{ plex_package.files }}"
+  become: true
+
+- name: reboot server
+  reboot:
+  become: yes
