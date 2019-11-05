@@ -6,4 +6,5 @@
 - name: upgrade server
   apt: 
     upgrade: dist
+  notify: Reboot Server
   become: yes

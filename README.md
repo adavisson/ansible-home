@@ -10,6 +10,3 @@ This repository hosts ansible playbooks and taskst to help automate updating con
  - All servers are Ubuntu 18.04 LTS
  - For Plex update:
   - Download latest package to '~/Downloads/plex/', make sure it is the only file in folder and then run playbook
-
-# TODO
- - Move Reboot to handler
