@@ -1,6 +1,6 @@
 - name: Copy latest plex package to tmp
   copy:
-    src: /Users/adavisson/Downloads/plex/
+    src: ~/Downloads/plex/
     dest: /tmp/
   become: true
 
