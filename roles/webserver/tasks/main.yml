@@ -1,0 +1,7 @@
+- name: Clone latest version from github
+  git:
+    repo: 'https://github.com/adavisson/website.git'
+    dest: /var/www/html/website/
+    force: yes
+  notify: Restart Apache
+  become: true
