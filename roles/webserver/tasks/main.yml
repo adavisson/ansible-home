@@ -5,3 +5,10 @@
     force: yes
   notify: Restart Apache
   become: true
+
+- name: Copy .htaccess file for client side routing
+  copy:
+    src: ../files/.htaccess
+    dest: /var/www/html/website/build/
+  notify: Restart Apache
+  become: true
