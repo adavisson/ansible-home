@@ -6,9 +6,20 @@
   notify: Restart Apache
   become: true
 
+- name: Clone latest version of Crazy Tales
+  git:
+    repo: 'https://github.com/adavisson/crazy-tales.git'
+    dest: /var/www/html/crazy-tales/
+    force: yes
+  notify: Restart Apache
+  become: true
+
 - name: Copy .htaccess file for client side routing
   copy:
     src: ../files/.htaccess
-    dest: /var/www/html/website/build/
+    dest: "{{ item }}"
+  with_items:
+    - "/var/www/html/website/build/"
+    - "/var/www/html/crazy-tales/build/"
   notify: Restart Apache
   become: true
