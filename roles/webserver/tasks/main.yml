@@ -14,6 +14,14 @@
   notify: Restart Apache
   become: true
 
+- name: Clone latest version of CFB-Machine
+  git:
+    repo: 'https://github.com/adavisson/cfb-machine.git'
+    dest: /var/www/html/cfb-machine/
+    force: yes
+  notify: Restart Apache
+  become: true
+
 - name: Copy .htaccess file for client side routing
   copy:
     src: ../files/.htaccess
