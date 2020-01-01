@@ -29,5 +29,6 @@
   with_items:
     - "/var/www/html/website/build/"
     - "/var/www/html/crazy-tales/build/"
+    - "/var/www/html/cfb-machine/build/"
   notify: Restart Apache
   become: true
