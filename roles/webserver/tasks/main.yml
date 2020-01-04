@@ -22,6 +22,28 @@
   notify: Restart Apache
   become: true
 
+# - name: Find all files to delete for cleanup
+  # find:
+    # path: "{{ item }}"
+    # recurse: yes
+    # excludes: 'build'
+  # register: files_for_deletion
+  # with_items:
+    # - /var/www/html/website
+    # - /var/www/html/crazy-tales
+    # - /var/www/html/cfb-machine
+  # become: true
+  # 
+# - debug:
+    # msg: "{{ files_for_deletion.files }}"
+
+# - name: Cleanup files
+#   file:
+#     path: "{{ item.path }}"
+#     state: absent
+#   with_items: "{{ files_for_deletion.files }}"
+#   become: true
+
 - name: Copy .htaccess file for client side routing
   copy:
     src: ../files/.htaccess
