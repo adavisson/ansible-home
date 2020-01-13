@@ -1,24 +1,12 @@
 - name: Clone latest version from github
   git:
-    repo: 'https://github.com/adavisson/website.git'
-    dest: /var/www/html/website/
+    repo: https://github.com/adavisson/{{ item }}.git
+    dest: /var/www/html/{{ item }}/
     force: yes
-  notify: Restart Apache
-  become: true
-
-- name: Clone latest version of Crazy Tales
-  git:
-    repo: 'https://github.com/adavisson/crazy-tales.git'
-    dest: /var/www/html/crazy-tales/
-    force: yes
-  notify: Restart Apache
-  become: true
-
-- name: Clone latest version of CFB-Machine
-  git:
-    repo: 'https://github.com/adavisson/cfb-machine.git'
-    dest: /var/www/html/cfb-machine/
-    force: yes
+  with_items:
+    - "website"
+    - "crazy-tales"
+    - "cfb-machine"
   notify: Restart Apache
   become: true
 
