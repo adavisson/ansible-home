@@ -7,6 +7,7 @@
     - "website"
     - "crazy-tales"
     - "cfb-machine"
+    - "study-buddy"
   notify: Restart Apache
   become: true
 
@@ -18,5 +19,6 @@
     - "/var/www/html/website/build/"
     - "/var/www/html/crazy-tales/build/"
     - "/var/www/html/cfb-machine/build/"
+    - "/var/www/html/study-buddy/build/"
   notify: Restart Apache
   become: true
