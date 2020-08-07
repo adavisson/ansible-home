@@ -6,7 +6,7 @@
   with_items:
     - "website"
     - "crazy-tales"
-    - "cfb-machine"
+    - "cfb-machine-vuetify"
     - "study-buddy"
   notify: Restart Apache
   become: true
@@ -18,7 +18,7 @@
   with_items:
     - "/var/www/html/website/build/"
     - "/var/www/html/crazy-tales/build/"
-    - "/var/www/html/cfb-machine/build/"
+    - "/var/www/html/cfb-machine-vuetify/dist/"
     - "/var/www/html/study-buddy/build/"
   notify: Restart Apache
   become: true
